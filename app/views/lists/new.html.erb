@@ -1,10 +1,40 @@
-<h1>Add a new List</h1>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+ <i class="fa-solid fa-clapperboard"></i>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<div class="container">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <%= link_to "My Lists", lists_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "New List", new_list_path, class: "nav-link" %>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="banner" style="height: 500px;
+                           background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+                           url('<%= asset_path('tom-van-soens-0gQcFW83dt4-unsplash.jpg') %>');
+                           background-repeat: no-repeat;
+                           background-position: center;
+                           background-size: 100%;
+                           display: flex;
+                           align-items: center;
+                           justify-content: center;">
+  <div class="container">
+    <h1>Add a new List</h1>
+  </div>
+</div>
+
+<div class="content">
   <%= simple_form_for(@list) do |f|%>
     <%= f.input :name %>
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   <% end %>
-
-<%= link_to "Back to lists", lists_path, class: "btn btn-success" %>
 </div>
